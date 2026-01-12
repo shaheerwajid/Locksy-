@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de contraseña TollRay</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $("#cmdCambiar").click(function () {
+            $.ajax({
+                method: "POST",
+                contentType: "application/json",
+                url: "/pms/cambiarClave",
+                data: JSON.stringify({
+                    id: "{ID_USUARIO}",
+                    txtClave: $("#txtClave").val(),
+                    txtClave2: $("#txtClave2").val(),
+                })
+            }).done(function (msg) {
+                var ok = $.trim(msg.substring(0, 2));
+                if (ok === "OK") {
+                    $(document).html("")[0].body.innerHTML = msg.substring(2);
+                } else alert("Ocurrió un error cambiando la contraseña")
+            });
+        })
+    </script>
+
+    <style>
+        button {
+            border-color: #666;
+            border-radius: 25px;
+            background-color: #8CC63F;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .pregunta {
+            color: #fff;
+        }
+
+        .pregunta p {
+            background-color: #B3B3B3;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        .pregunta input {
+            background-color: #8CC63F;
+            border-style: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #nombre {
+            font-family: 'Signika', sans-serif;
+            font-weight: 700;
+            font-size: x-large;
+            color: #646464;
+        }
+
+        #text_bold {
+            font-family: 'Signika', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: #646464;
+
+        }
+
+        .py-3 {
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+
+        .btnvalidar {
+            font-family: 'Signika', sans-serif;
+            font-weight: 300;
+            color: #fff;
+            border: none;
+
+        }
+
+        #boton_blanco {
+            background-color: #E5E5E5;
+            border: solid 0.5x #666;
+            border-radius: 30px;
+            color: #666;
+            padding: 5px;
+            position: relative;
+            top: -20px;
+
+        }
+
+        .btnwitte {
+
+            background-color: #E5E5E5;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            padding: 5px;
+            position: relative;
+            color: #646464;
+
+        }
+
+        #img_center {
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+
+        .padding {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: 'Signika', sans-serif;
+            font-weight: 400;
+            font-size: x-large;
+            color: #646464;
+
+        }
+
+
+        #footer h3 {
+            font-family: 'Signika', sans-serif;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            color: #646464;
+
+
+        }
+
+        #header a {
+            font-family: 'Signika', sans-serif;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            color: #646464;
+            font-size: 16px;
+            font-weight: 400;
+
+
+
+        }
+
+        #footer ul,
+        p {
+            font-family: 'Signika', sans-serif;
+            font-size: 16px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            color: #646464;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container-fluid" id="header">
+            <div class="row" style="background-color: #E5E5E5; padding-top: 10px; padding-bottom: 10px; ">
+                <div class="col-md-2 col-sm-2">
+                    <center>
+                        <img alt="logo" src="https://www.tollray.ninja/img/logo_top.png">
+                    </center>
+                </div>
+                <div class="col-md-3 col-sm-3"
+                    style="border-right: 0.5px solid; border-right-color: #646464; margin-top: 20px;">
+                    <center>
+                        <a href="https://www.tollray.ninja/es/funciones/">Cualidades</a>
+                    </center>
+                </div>
+                <div class="col-md-3 col-sm-3"
+                    style="border-right: 0.5px solid; border-right-color: #646464; margin-top: 20px;">
+                    <center>
+                        <a href="https://www.tollray.ninja/es/descargar/">Descargar</a>
+
+                    </center>
+                </div>
+                <div class="col-md-3 col-sm-3" style="margin-top: 20px;">
+                    <center>
+                        <a href="https://www.tollray.ninja/es/preguntas/">Preguntas</a>
+                    </center>
+                </div>
+                <div class="col-md-1 col-sm-1">
+                    <center>
+                        <img alt="logo" src="https://www.tollray.ninja/img/idioma.png"
+                            style="width: 70px; margin-top: 30px;">
+                    </center>
+                </div>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <div id="div1" class="container-fluid justify-content-center">
+        <div class="row" style="background-color: #FADA5E;">
+            <div class="col-md-4 col-sm-4">&nbsp;</div>
+
+            <div class="col-md-4 col-sm-4" style="text-align: center;">
+                <img alt="logo" src="https://www.tollray.ninja/img/logo.png" id="img_center" style="width: 300px;">
+                <div style="text-align: justify;" id="nombre">
+                    <h1 style="padding-bottom: 50px; text-align: center; ">!Exelente¡</h1>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">&nbsp;</div>
+        </div>
+    </div>
+    <div class="row" style="background-color: #fff;">
+        <div class="col-md-4 col-sm-4">&nbsp;</div>
+        <div class="col-md-4 col-sm-4" style="color:#666; ">
+
+            <center>
+                <div id="boton_blanco">
+                    <center>
+                        <h2 id="nombre">Ya puedes cambiar la contraseña</h2>
+                    </center>
+                </div>
+
+
+                <div>
+                    <form target="_self">
+                        <div class="padding">
+                            <label for="txtClave">Nueva contraseña:</label></br>
+                            <input type="password" name="txtClave" id="txtClave" class="btnwitte">
+                        </div>
+                        <div class="padding">
+                            <label for="txtClave2">Confirmar nueva contraseña:</label></br>
+                            <input type="password" name="txtClave2" id="txtClave2" class="btnwitte">
+                        </div>
+                        <div class="padding">
+                            <button type="button" id="cmdCambiar" class="btnvalidar">Cambiar contraseña</button>
+                        </div>
+                    </form>
+                </div>
+            </center>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4"></div>
+    </div>
+
+    </div>
+    </div>
+
+    <div class="container-fluid" style="padding-top: 30px;" id="footer">
+        <div class="row" style="background-color: #E5E5E5; padding-top: 30px;">
+            <div class="col-md-3 col-sm-3">
+                <center>
+                    <img alt="logo" src="https://www.tollray.ninja/img/logo_footer.png">
+                    <p>© copyright tollray</p>
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <center>
+                    <h3 style="border-right: 0.5px solid; border-right-color: #646464;">TollRay</h3>
+                    <p>contacto@tollray.com</p>
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <center>
+                    <h3 style="border-right: 0.5px solid; border-right-color: #646464;">Servicio al cliente</h3>
+                    <p>www.tollray.com</p>
+                    <p>Contactenos</p>
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <center>
+                    <h3>Social</h3>
+                    <ul style="padding-left: 0px;">facebook</ul>
+                    <ul style="padding-left: 0px;">Instagram</ul>
+                    <ul style="padding-left: 0px;">twitter</ul>
+                </center>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

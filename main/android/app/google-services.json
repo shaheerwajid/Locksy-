@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774754660606",
+    "project_id": "locksy-app",
+    "storage_bucket": "locksy-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774754660606:android:c633d6579747c18dfd75af",
+        "android_client_info": {
+          "package_name": "com.example.cryptochat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0ApsBscRBuli_mym70mb07JdfOcZc9FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

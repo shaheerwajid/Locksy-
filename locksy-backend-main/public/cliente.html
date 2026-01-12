@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        
+        // var socket = io("http://cliniapp.net:5000", {
+        //     'transports': ['websocket'],
+        //     'autoConnect': true,
+        //     'forceNew': true,
+        //     'extraHeaders': {
+        //         'x-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDYzZGQxM2Y0ZGRmYmExZGVhNjhhY2IiLCJpYXQiOjE2MTgwMjAzOTMsImV4cCI6MTYxODI3OTU5M30.ASAy37HnwCAvaQt0dmrLI-eUNfAN_yKA1Q2pvEsynmA',
+        //         'firebaseid': 'cRvlx9sgT62_o8Fq9mTnra:APA91bEMV1foD_2b08sNv0TGrJ6Rwm5XFzhBbKE39k4RR8lyx_CIFdH0alBQn1IMrg4JmlQwQlk25kgTcYalGPb8s_44e6wBKjJecH7pZKA5gNCtsxxmWeaBM1CzSvg-mIHXyvPIFy25'
+        //     }
+        // });
+        // // 6063dd13f4ddfba1dea68acb // Deyner Reinoso
+
+        console.log(socket)
+
+        socket.on("connect", () => {
+            console.log(socket.id);
+        });
+
+        socket.on('mensaje-personal', function (payload) {
+           console.log(payload)
+        });
+
+        socket.emit('chat-message', 'MENSAJE');
+
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
